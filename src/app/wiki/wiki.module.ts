@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InformacionComponent } from './informacion/informacion.component';
 import { WikiRoutingModule } from './wiki-routing.module';
+import { ApartadoComponent } from './apartado/apartado.component';
 
 
 
 @NgModule({
   declarations: [
-    InformacionComponent
+    ApartadoComponent
   ],
   imports: [
     CommonModule,
