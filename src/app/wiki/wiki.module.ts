@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WikiRoutingModule } from './wiki-routing.module';
 import { ApartadoComponent } from './apartado/apartado.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { ApartadoComponent } from './apartado/apartado.component';
   ],
   imports: [
     CommonModule,
-    WikiRoutingModule
+    WikiRoutingModule,
+    FormsModule
   ]
 })
 export class WikiModule { }
