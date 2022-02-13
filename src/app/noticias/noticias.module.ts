@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NoticiarioComponent } from './noticiario/noticiario.component';
 import { NoticiasRoutingModule } from './noticias-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -11,7 +12,8 @@ import { NoticiasRoutingModule } from './noticias-routing.module';
   ],
   imports: [
     CommonModule,
-    NoticiasRoutingModule
+    NoticiasRoutingModule,
+    SharedModule
   ]
 })
 export class NoticiasModule { }

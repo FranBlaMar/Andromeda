@@ -5,8 +5,7 @@ import { ApartadoService } from './apartado.service';
 @Component({
   selector: 'app-apartado',
   templateUrl: './apartado.component.html',
-  styles: [
-  ]
+  styleUrls: ['./apartado.component.css']
 })
 export class ApartadoComponent implements OnInit {
 

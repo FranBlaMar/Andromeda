@@ -1,16 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { noticia } from '../interfaces/noticia.interface';
+import { NoticiarioService } from './noticiario.service';
 
 @Component({
   selector: 'app-noticiario',
   templateUrl: './noticiario.component.html',
-  styles: [
-  ]
+  styleUrls: ['./noticiario.component.css']
 })
 export class NoticiarioComponent implements OnInit {
 
-  constructor() { }
+  listaNoticias: noticia[] = [];
+  constructor(private servicio: NoticiarioService) { }
 
   ngOnInit(): void {
+    this.obtenerNoticias();
   }
 
+  obtenerNoticias(){
+    this.servicio.enviarPeticion()
+    .subscribe(resp=>{
+      this.listaNoticias= resp;
+    })
+  }
 }

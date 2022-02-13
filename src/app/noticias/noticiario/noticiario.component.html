@@ -1,1 +1,15 @@
-<p>noticiario works!</p>
+
+
+<app-navbar></app-navbar>
+  
+<div class="d-flex flex-wrap">
+ <div class="card m-4 p-4" style="width: 18rem;" *ngFor="let noticia of listaNoticias">
+    <img class="card-img-top" src={{noticia.imagen}}>
+    <div class="card-body">
+      <h5 class="card-title">{{noticia.titular}}</h5>
+      <a href={{noticia.url}} class="btn btn-primary">Ir a la noticia</a>
+    </div>
+</div>
+</div>
+
+<app-footer></app-footer>

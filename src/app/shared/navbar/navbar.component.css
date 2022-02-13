@@ -1,0 +1,20 @@
+a{
+    color:#FFF;
+    font-weight: bolder;
+}
+a {
+	background-image: -webkit-linear-gradient(left, #fff 50%, #2a2a2a 50%);
+	background-image: linear-gradient(to right, #fff 50%, #dad600 50%);
+	background-position: 0;
+	background-size: 200%;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: 'Barlow', sans-serif;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+a:hover {
+	background-position: -100%;
+}
