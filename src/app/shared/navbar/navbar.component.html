@@ -28,9 +28,9 @@
                     <a class="nav-link dropdown-toggle h5 font-weight-bold" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Wiki
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" *ngFor="let apartado of listaApartados" aria-labelledby="dropdown" >
-                        <li class="nav-item">
-                            <a class="dropdown-item" [routerLink]="['/info/',apartado.nombreApartado]"> {{apartado.nombreApartado}}</a>
+                    <ul class="dropdown-menu dropdown-menu-dark" >
+                        <li class="nav-item" *ngFor="let apartado of listaApartados">
+                            <a class="dropdown-item" (click)="viajar(apartado.nombreApartado)"> {{apartado.nombreApartado}}</a>
                         </li>
                     </ul>
                   </li>

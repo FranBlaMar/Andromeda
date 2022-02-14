@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { apartado } from 'src/app/wiki/interfaces/wiki.interface';
 import { ApartadoService } from './apartado.service';
 
@@ -9,7 +10,7 @@ import { ApartadoService } from './apartado.service';
 })
 export class NavbarComponent implements OnInit {
   listaApartados: apartado[] = [];
-  constructor(private servicio: ApartadoService) { }
+  constructor(private servicio: ApartadoService, private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerApartados();
@@ -19,7 +20,11 @@ export class NavbarComponent implements OnInit {
     this.servicio.enviarPeticion()
     .subscribe(resp=>{
       this.listaApartados = resp;
-      console.log(resp)
+      
     })
+  }
+
+  viajar(apartadoNombre: string){
+    window.location.href = "/info/" + apartadoNombre;
   }
 }
