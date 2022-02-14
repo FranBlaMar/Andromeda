@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { apartado } from '../interfaces/wiki.interface';
-import { ApartadoService } from './apartado.service';
+import { ApartadoService } from '../../shared/navbar/apartado.service';
 
 @Component({
   selector: 'app-apartado',

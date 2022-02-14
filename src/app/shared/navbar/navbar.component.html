@@ -2,7 +2,7 @@
     <div class="container-fluid ">
         <div class="row">
             <div class="col-3">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
                     <i class="bi bi-filter-left"  style="color: #FFFFFF; font-size: 3rem;"></i>
                 </button>
             </div>
@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse  align-items-center p-4" id="navbar">
             <ul class="navbar-nav m-auto">
                 <li class="nav-item p-2">
-                    <a class="h5 nav-link active font-weight-bold" [routerLink]="['']" routerLinkActive="active-link" >Inicio</a>
+                    <a class="h5 nav-link active font-weight-bold" [routerLink]="['/main']" routerLinkActive="active-link" >Inicio</a>
                 </li>
                 <li class="nav-item p-2">
                     <a class="h5 nav-link font-weight-bold" [routerLink]="['/auth']" routerLinkActive="active-link">Login</a>
@@ -24,9 +24,16 @@
                 <li class="nav-item d-none d-md-block d-lg-block">
                     <img class="img-fluid" style="width: 20rem; height: 4rem;" src="./assets/img/logo.png">
                 </li>
-                <li class="nav-item p-2">
-                <a class="h5 nav-link font-weight-bold" [routerLink]="['/wiki']" routerLinkActive="active-link">Wiki</a>
-                </li>
+                <li class="nav-item dropdown p-2">
+                    <a class="nav-link dropdown-toggle h5 font-weight-bold" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Wiki
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown">
+                      <li><a class="dropdown-item" href="#">Action1</a></li>
+                      <li><a class="dropdown-item" href="#">Action3</a></li>
+                      <li><a class="dropdown-item" href="#">Action2</a></li>
+                    </ul>
+                  </li>
                 <li class="nav-item p-2">
                     <a class="h5 nav-link active font-weight-bold" [routerLink]="['/contacto']" routerLinkActive="active-link" >Contacto</a>
                 </li>
