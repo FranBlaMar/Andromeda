@@ -11,7 +11,7 @@ const routes: Routes = [
     path:"main", component: MainComponent, pathMatch: "full"
   },
   {
-    path: 'wiki',
+    path: 'info/:nombreApartado',
     loadChildren: () => import('./wiki/wiki.module').then(m => m.WikiModule)
   },
   {
