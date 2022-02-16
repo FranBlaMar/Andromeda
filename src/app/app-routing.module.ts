@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Guardian } from './guardian.service';
-import { InicioComponent } from './inicio/inicio.component';
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   {
-    path:"", component: InicioComponent, pathMatch: "full"
-  },
-  {
-    path:"main", component: MainComponent, pathMatch: "full"
+    path:"main", component: MainComponent
   },
   {
     path: 'info/:nombreApartado',
@@ -36,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule), canActivate: [Guardian]
   },
   {
-    path:"**", redirectTo:""
+    path:"**", redirectTo:"main"
   }
 
 ];

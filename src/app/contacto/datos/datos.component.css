@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=VT323&display=swap');
+.container{
+    min-height: 100vh;
+}
+.imagen1contacto{
+   margin: auto;
+   width: 20vw;
+}
+
+hr{
+    color: #FFF;
+}
+h3{
+    font-family: 'Major Mono Display', monospace;
+}
+.card{
+    background-image: url("src/assets/img/fondoContacto.jpg")
+}
