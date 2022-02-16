@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { noticia } from '../interfaces/noticia.interface';
 
 
@@ -8,7 +9,7 @@ import { noticia } from '../interfaces/noticia.interface';
 })
 export class NoticiarioService {
 
-  url: string = "http://localhost:8080/noticia"
+  url: string = environment + "/noticia";
   constructor(private http: HttpClient) { }
 
   enviarPeticion(){

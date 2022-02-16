@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { InicioComponent } from './inicio/inicio.component';
+import { Guardian } from './guardian.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { InicioComponent } from './inicio/inicio.component';
     HttpClientModule,
     SharedModule
   ],
-  providers: [],
+  providers: [Guardian],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

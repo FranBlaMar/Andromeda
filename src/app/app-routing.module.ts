@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { Guardian } from './guardian.service';
 import { InicioComponent } from './inicio/inicio.component';
 import { MainComponent } from './main/main.component';
 
@@ -20,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'foro',
-    loadChildren: () => import('./foro/foro.module').then(m => m.ForoModule)
+    loadChildren: () => import('./foro/foro.module').then(m => m.ForoModule),  canActivate: [Guardian]
   },
   {
     path: 'contacto',
@@ -32,7 +33,7 @@ const routes: Routes = [
   },
   {
     path: 'usuario',
-    loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule)
+    loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule), canActivate: [Guardian]
   },
   {
     path:"**", redirectTo:""

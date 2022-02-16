@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +17,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    RouterModule
+    RouterModule,
+    SharedModule,
+    FormsModule
   ]
 })
 export class LoginModule { }

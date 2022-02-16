@@ -20,7 +20,6 @@ export class NavbarComponent implements OnInit {
     this.servicio.enviarPeticion()
     .subscribe(resp=>{
       this.listaApartados = resp;
-      
     })
   }
 

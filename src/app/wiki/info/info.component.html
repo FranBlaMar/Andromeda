@@ -1,5 +1,5 @@
 
-<app-navbar></app-navbar>
+
 <div class="input-group container">
         <div class="form-outline">
             <input type="search" id="form1" class="form-control" [(ngModel)]="busqueda" placeholder="Busqueda..."/>
@@ -16,8 +16,7 @@
 </div>
 
 <div class="container mt-5" *ngFor="let info of listInfo">
-    <img src={{info.imagen}} style="width: 23rem; height: 20rem;">
-    <p class="text-white text-uppercase"> {{info.nombreInfo}}</p>
-    <p class="text-white"> {{info.informacion}}</p>
+    <img src={{info.image}} style="width: 23rem; height: 20rem;">
+    <p class="text-white text-uppercase"> {{info.nameInfo}}</p>
+    <p class="text-white"> {{info.info}}</p>
 </div>
-<app-footer></app-footer>

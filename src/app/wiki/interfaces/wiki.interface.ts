@@ -1,11 +1,11 @@
 export interface apartado {
-    nombreApartado: string;
-    informacion:    Informacion[];
+    name: string;
+    info:    Informacion[];
     idApartado:     number;
 }
 
 export interface Informacion {
-    nombreInfo:  string;
-    imagen:      string;
-    informacion: string;
+    nameInfo:  string;
+    image:  string;
+    info: string;
 }

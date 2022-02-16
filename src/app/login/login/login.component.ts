@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { userLogin } from '../interfaces/login.interface';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [".card{ height: 370px; margin-top: auto; margin-bottom: auto;width: 400px;background-color: rgba(0,0,0,0.5) !important;}"
+  styles: [""
   ]
 })
 export class LoginComponent implements OnInit {
-
+  user!: userLogin;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  
 
 }

@@ -18,3 +18,7 @@ a {
 a:hover {
 	background-position: -100%;
 }
+
+.menu{
+	margin-top: 3.5rem;
+}

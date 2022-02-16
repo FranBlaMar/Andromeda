@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Informacion } from '../interfaces/wiki.interface';
 import { InfoService } from './info.service';
 
@@ -13,11 +14,21 @@ export class InfoComponent implements OnInit {
   apartado: string = this.route.snapshot.params["nombreApartado"];
   busqueda: string = this.apartado;
   listInfo: Informacion[] = [];
+  paramsSubscription!: Subscription ;
   error: boolean = false; 
+
+
   constructor(private route:ActivatedRoute, private servicio: InfoService) { }
 
   ngOnInit(): void {
-    this.obtenerInfo();
+    this.paramsSubscription = this.route.params
+      .subscribe(
+        (updatedParams) => {
+          this.apartado = updatedParams['nombreApartado'];
+          this.busqueda = updatedParams['nombreApartado']
+          this.obtenerInfo();
+        }
+      );
   }
 
   obtenerInfo(){

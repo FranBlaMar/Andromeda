@@ -1,25 +1,40 @@
-<p>login works!</p>
+ <section class="vh-100">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-10">
+                    <div class="card" style="border-radius: 1%;">
+                        <div class="row g-0">
+                            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5">
+                                    <form class="form-horizontal">
+  
+                                        <h4 class="mb-3 pb-3"><strong>Log in</strong></h4>
+                                        <div class="form-outline mb-4 row">
+                                          <label class="form-label col-sm-3" id="login">Usuario</label>
+                                          <div class="col-sm-9">
+                                            <input type="text" class="form-control form-control-lg" [(ngModel)]="user.nombreUsuario" name="nombreUsuario"/>
+                                          </div>
+                                        </div>
+                                        <div class="form-outline mb-4 row">
+                                          <label class="form-label col-sm-3" id="logni">Contraseña</label>
+                                          <div class="col-sm-9">
+                                            <input type="password" class="form-control form-control-lg" [(ngModel)]="user.contrasena" name="contrasena"/>
+                                        </div>
+                                        </div>
+                                        <div class="pt-1 mb-4">
+                                            <button class="btn btn-dark btn-lg btn-block" type="button">Iniciar Sesión</button>
+                                        </div>
+                                        <p class="mb-5 pb-lg-2">¿No tienes una cuenta?  <a href="#" style="color: #030303;"> Registrate</a></p>
 
-<!-- <div class="container m-auto">
-    <div class="card p-4" style="width: 18rem; ">
-        <div class="card-body">
-            <form>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Introduzca su email...">
-                    
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-5 d-flex text-center">
+                                <img src="./assets/img/slide2.jpg" width="100%">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Introduzca la contraseña...">
-                </div>
-                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-            </form>
-        </div>
-        <div class="card-footer">
-            <div class="d-flex justify-content-center links">
-                ¿No tienes una cuenta?<a [routerLink]="['/register']">Registrarse</a>
             </div>
         </div>
-    </div>
-</div> -->
+    </section>

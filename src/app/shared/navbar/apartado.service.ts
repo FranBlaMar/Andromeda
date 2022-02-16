@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { apartado } from '../../wiki/interfaces/wiki.interface';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { apartado } from '../../wiki/interfaces/wiki.interface';
 })
 export class ApartadoService {
 
-  url: string = "http://localhost:8080/wiki"
+  url: string = environment.URLBase +"/wiki";
   constructor(private http: HttpClient) { }
 
   enviarPeticion(){
