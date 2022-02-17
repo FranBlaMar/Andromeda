@@ -9,7 +9,7 @@ import { noticia } from '../interfaces/noticia.interface';
 })
 export class NoticiarioService {
 
-  url: string = environment + "/noticia";
+  url: string = environment.URLBase + "/noticia";
   constructor(private http: HttpClient) { }
 
   enviarPeticion(){

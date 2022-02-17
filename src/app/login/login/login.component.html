@@ -6,23 +6,23 @@
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5">
-                                    <form class="form-horizontal">
+                                    <form class="form-horizontal" (ngSubmit)="login()">
   
                                         <h4 class="mb-3 pb-3"><strong>Log in</strong></h4>
                                         <div class="form-outline mb-4 row">
                                           <label class="form-label col-sm-3" id="login">Usuario</label>
                                           <div class="col-sm-9">
-                                            <input type="text" class="form-control form-control-lg" [(ngModel)]="user.nombreUsuario" name="nombreUsuario"/>
+                                            <input type="text" class="form-control form-control-lg" [(ngModel)]="user.userName" name="userName"/>
                                           </div>
                                         </div>
                                         <div class="form-outline mb-4 row">
                                           <label class="form-label col-sm-3" id="logni">Contraseña</label>
                                           <div class="col-sm-9">
-                                            <input type="password" class="form-control form-control-lg" [(ngModel)]="user.contrasena" name="contrasena"/>
+                                            <input type="password" class="form-control form-control-lg" [(ngModel)]="user.password" name="password"/>
                                         </div>
                                         </div>
                                         <div class="pt-1 mb-4">
-                                            <button class="btn btn-dark btn-lg btn-block" type="button">Iniciar Sesión</button>
+                                            <button class="btn btn-dark btn-lg btn-block" type="submit">Iniciar Sesión</button>
                                         </div>
                                         <p class="mb-5 pb-lg-2">¿No tienes una cuenta?  <a href="#" style="color: #030303;"> Registrate</a></p>
 
