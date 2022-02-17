@@ -10,9 +10,10 @@ import { Router } from '@angular/router';
   ]
 })
 export class LoginComponent implements OnInit {
+  
   user: userLogin = {
-    "userName": 'User',
-    "password": 'user'
+    "userName": '',
+    "password": ''
   };
   constructor(private servicio: AccesoService, private route: Router) { }
 
@@ -23,14 +24,15 @@ export class LoginComponent implements OnInit {
     this.servicio.login(this.user)
     .subscribe({
       next: (resp) => {
-        console.log(resp)
         localStorage.setItem("jwt",resp.token);
-        this.route.navigateByUrl("/user");
-        
+        this.route.navigateByUrl("/user"); 
       },
       error: (err) => {
         console.log(err);
       }
     })
   }
+
+
+
 }
