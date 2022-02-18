@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { userLogin } from '../interfaces/login.interface';
 import { AccesoService } from '../services/acceso.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   
   user: userLogin = {
-    "userName": '',
-    "password": ''
+    userName: '',
+    password: ''
   };
   constructor(private servicio: AccesoService, private route: Router) { }
 
@@ -24,11 +25,21 @@ export class LoginComponent implements OnInit {
     this.servicio.login(this.user)
     .subscribe({
       next: (resp) => {
-        localStorage.setItem("jwt",resp.token);
-        this.route.navigateByUrl("/user"); 
+        localStorage.setItem("jwt",resp.jwt_token);
+        this.route.navigateByUrl("/usuario"); 
       },
       error: (err) => {
-        console.log(err);
+        Swal.fire({
+          title: 'Error...',
+          text: `${err.error.error}`,
+          width: 600,
+          padding: '5em',
+          color: '#FFF',
+          background: ' url(./assets/img/fondoError.gif)',
+          backdrop: `
+            rgba(0,0,123,0.4)
+          `
+        })
       }
     })
   }

@@ -11,25 +11,23 @@
                                     <div class="form-outline mb-4 row">
                                       <label class="form-label col-sm-3" id="login">Usuario</label>
                                       <div class="col-sm-9">
-                                        <input type="text" class="form-control form-control-lg" formControlName="nombreUsuario"/>
-                                        <span class="form-text text-danger" *ngIf="formularioRegistro.controls['nombreUsuario'].errors && formularioRegistro.controls['nombreUsuario'].touched"> El nombre de usuario no puede estar vacío o tener una longitud inferior a 3 caracteres</span>
+                                        <input type="text" class="form-control form-control-lg" formControlName="userName"/>
+                                        <span class="form-text text-danger" *ngIf="formularioRegistro.controls['userName'].errors && formularioRegistro.controls['userName'].touched"> El nombre de usuario no puede estar vacío o tener una longitud inferior a 3 caracteres</span>
 
                                       </div>
                                     </div>
                                     <div class="form-outline mb-4 row">
                                       <label class="form-label col-sm-3" id="logni">Contraseña</label>
                                       <div class="col-sm-9">
-                                        <input type="password" class="form-control form-control-lg" formControlName="contraseña"/>
-                                        <span class="form-text text-danger" *ngIf="formularioRegistro.controls['contraseña'].errors && formularioRegistro.controls['contraseña'].touched">Requisitos:<br>- Mínimo 8 caracteres<br>- Mínimo un número<br>- Uso de letras mayúsculas y minúsculas </span>
-
-
+                                        <input type="password" class="form-control form-control-lg" formControlName="password"/>
+                                        <span class="form-text text-danger" *ngIf="formularioRegistro.controls['password'].errors && formularioRegistro.controls['password'].touched">Requisitos:<br>- Mínimo 8 caracteres<br>- Mínimo un número<br>- Uso de letras mayúsculas y minúsculas </span>
                                     </div>
                                     </div>
                                     <div class="form-outline mb-4 row">
                                         <label class="form-label col-sm-3" id="logni">Nombre</label>
                                         <div class="col-sm-9">
-                                          <input type="text" class="form-control form-control-lg" formControlName="nombre"/>
-                                          <span class="form-text text-danger" *ngIf="formularioRegistro.controls['nombre'].errors && formularioRegistro.controls['nombre'].touched">Nombre no válido </span>
+                                          <input type="text" class="form-control form-control-lg" formControlName="name"/>
+                                          <span class="form-text text-danger" *ngIf="formularioRegistro.controls['name'].errors && formularioRegistro.controls['name'].touched">Nombre no válido </span>
 
                                         </div>
                                     </div>
@@ -46,9 +44,6 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-lg-5 d-flex text-center">
-                            <img src="./assets/img/slide2.jpg" width="100%">
                         </div>
                     </div>
                 </div>

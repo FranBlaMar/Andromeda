@@ -2,12 +2,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { userLogin } from '../interfaces/login.interface';
+import { userLogin, userRegister } from '../interfaces/login.interface';
 import { RespuestaAuth } from '../interfaces/token.interface';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AccesoService {
   private URLBase: string = environment.URLBase;
   constructor( private http: HttpClient) { }
@@ -15,8 +16,12 @@ export class AccesoService {
   //Metodo para hacer login
   login(user: userLogin){
     const url = `${this.URLBase}/auth/login`;
-    let userJson: string = JSON.stringify(user);
-    return this.http.post<RespuestaAuth>(url, userJson);
+    return this.http.post<RespuestaAuth>(url, user);
+  }
+  //Metodo para registrar
+  register(user: userRegister){
+    const url = `${this.URLBase}/auth/register`;
+    return this.http.post<RespuestaAuth>(url, user);
   }
 
   //Metodo para comprobar si un token es valido
