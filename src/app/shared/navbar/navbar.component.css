@@ -1,24 +1,31 @@
-a{
-    color:#FFF;
-    font-weight: bolder;
-}
+
 a {
-	background-image: -webkit-linear-gradient(left, #fff 50%, #2a2a2a 50%);
-	background-image: linear-gradient(to right, #fff 50%, #dad600 50%);
-	background-position: 0;
-	background-size: 200%;
-	-webkit-transition: all 0.4s;
-	transition: all 0.4s;
-    -webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font-family: 'Barlow', sans-serif;
+	color: #FFF;
+	font-family: 'Contrail One';
 	font-weight: 900;
 	text-transform: uppercase;
 }
-a:hover {
-	background-position: -100%;
+a:after {
+	content: '';
+	display: block;
+	height: 2px;
+	background: white;
+	width: 0%;
+	transition: width .15s ease-out .15s;
+}
+a:hover{
+	color:rgb(241, 214, 123);
+}
+a:hover:after {
+	width: 100%;
+
 }
 
 .menu{
 	margin-top: 3.5rem;
+}
+
+.active{
+	color:rgb(241, 214, 123)!important;
+	background-color: transparent!important;
 }

@@ -1,5 +1,5 @@
 
-
+<div class="container" style="min-height: 63vh">
 <div class="input-group container">
         <div class="form-outline">
             <input type="search" id="form1" class="form-control" [(ngModel)]="busqueda" placeholder="Busqueda..."/>
@@ -11,12 +11,19 @@
         </div>
 </div>
 
-<div class="text-white" *ngIf="error" style="height: 100vh;">
+<div class="text-white" *ngIf="error" style="height: 60vh;">
     <h1 class="text-center justify-content-center"> No se ha encontrado nada :(</h1>
 </div>
 
-<div class="container mt-5" *ngFor="let info of listInfo">
-    <img src={{info.image}} style="width: 23rem; height: 20rem;">
-    <p class="text-white text-uppercase"> {{info.nameInfo}}</p>
-    <p class="text-white"> {{info.info}}</p>
+<div class="container mt-5 d-flex flex-wrap" *ngFor="let info of listInfo">
+    <div class="imagen">
+        <img src={{info.image}} class="img-fluid" style="width: 25rem; height: 20rem;">
+    </div>
+    <div class="texto" style="max-width: 30rem; margin: auto">
+        <p class="text-white text-uppercase titulo"> {{info.nameInfo}}</p>
+        <hr class="text-white">
+        <p class="text-white cuerpoInfo"> {{info.info}}</p>
+    </div>
+    
+</div>
 </div>

@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       error: (err) => {
         Swal.fire({
           title: 'Error...',
-          text: `${err.error.error}`,
+          text: `${err.error.mensajeDeError}`,
           width: 600,
           padding: '5em',
           color: '#FFF',

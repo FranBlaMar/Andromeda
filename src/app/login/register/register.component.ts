@@ -25,15 +25,24 @@ export class RegisterComponent implements OnInit {
 
 
   register(){
-    console.log(this.formularioRegistro.value)
     this.servicio.register(this.formularioRegistro.value)
     .subscribe({
       next: (resp) => {
-        console.log(resp)
         localStorage.setItem("jwt",resp.jwt_token);
         this.route.navigateByUrl("/usuario"); 
       },
       error: (err) => {
+        Swal.fire({
+          title: 'Error...',
+          text: `${err.error.mensajeDeError}`,
+          width: 600,
+          padding: '5em',
+          color: '#FFF',
+          background: ' url(./assets/img/fondoError.gif)',
+          backdrop: `
+            rgba(0,0,123,0.4)
+          `
+        })
       }
     })
     this.formularioRegistro.reset();

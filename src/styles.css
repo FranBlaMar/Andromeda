@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
 body{
     background-color: rgb(0,0,0);
+    font-family: 'Contrail One';
 }
