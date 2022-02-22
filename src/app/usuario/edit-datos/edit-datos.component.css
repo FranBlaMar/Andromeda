@@ -1,12 +1,4 @@
-.contenedor{
-    margin: 2rem;
-}
-h2,p{
-    color: #fff;
-}
-.card{
-    background-color: #000;
-}
+
 .containerCarta{
     padding: 2rem;
 }
@@ -14,7 +6,6 @@ h2,p{
     width: 10rem;
     height: 10rem;
     border-radius:150px;
-    border: 5px solid #FFF;
 }
 .card-title{
     margin-bottom: 3rem;
@@ -25,8 +16,6 @@ h2,p{
 }
 
 button {
-    margin: auto;
-    margin-left: 1rem;
     width: 140px;
     height: 45px;
     font-size: 11px;

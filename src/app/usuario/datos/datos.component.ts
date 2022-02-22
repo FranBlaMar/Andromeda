@@ -8,13 +8,13 @@ import { DatosUserService } from '../services/datosUser.service';
   styleUrls: ['./datos.component.css']
 })
 export class DatosComponent implements OnInit {
-
+  carga: boolean = false;
   user!: userCompleto;
   constructor(private servicio: DatosUserService) { }
 
   ngOnInit(): void {
     this.servicio.obtenerUsuario()
-    .subscribe (resp => {this.user = resp})
+    .subscribe (resp => {this.user = resp, this.carga = true})
   }
 
 

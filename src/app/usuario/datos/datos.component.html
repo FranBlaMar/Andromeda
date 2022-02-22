@@ -1,32 +1,31 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div class="card card-inverse" style="background-color: rgb(235, 72, 72); border-color: rgb(255, 255, 255);">
-                <div class="card-block containerCarta">
-                    <div class="row datosUser">
+<div class="contenedor" *ngIf="carga">
+    <div class="card card-inverse" >
+        <div class="card-block containerCarta">
+            <div class="row datosUser">
 
-                        <div class="col-md-4 col-sm-4 text-center">
-                            <img class="btn-md" class="img-fluid fotoPerfil"src="../../../assets/img/fondoError.gif" alt="" style="border-radius:50%;">
-                        </div>  
-                        
-                        <div class="col-md-8 col-sm-8" style="padding: 3rem;">
-                            <h2 class="card-title">Nombre: {{user.name}}</h2>
-                            <p class="card-text"><strong>Descripción: </strong> {{user.aboutMe}} </p>
-                            <p class="card-text"><strong>Email: </strong> {{user.email}} </p>
-                        </div>
-                               
-                        <div class="col-md-6 col-sm-6 text-center">
-                            <h2><strong>{{user.numberOfPosts}}</strong></h2>                    
-                            <p><small>Número de posts</small></p>
-                        </div>
+                <div class="col-md-4 col-sm-4 text-center">
+                    <img class="btn-md" class="img-fluid fotoPerfil"src="../../../assets/img/fondoError.gif" alt="" >
+                </div>  
+                
+                <div class="col-md-8 col-sm-8" style="padding: 3rem;">
+                    <h2 class="card-title">Nombre: {{user.name}}</h2>
+                    <p class="card-text"><strong>Descripción: </strong> {{user.aboutMe}} </p>
+                    <p class="card-text"><strong>Email: </strong> {{user.email}} </p>
+                    <button class="btn btn-dark btn-lg btn-block" [routerLink]="['editar']" > Editar información </button>
+                </div>
+                
+                <div class="row">
+                <div class="col-md-6 col-sm-6 text-center numeros">
+                    <h2><strong>{{user.numberOfPosts}}</strong></h2>                    
+                    <p><small>Número de posts</small></p>
+                </div>
 
-                        <div class="col-md-6 col-sm-6 text-center">
-                            <h2><strong>{{user.numberOfComents}}</strong></h2>                    
-                            <p><small>Número de comentarios</small></p>
-                        </div>
-                    </div>
+                <div class="col-md-6 col-sm-6 text-center numeros">
+                    <h2><strong>{{user.numberOfComents}}</strong></h2>                    
+                    <p><small>Número de comentarios</small></p>
                 </div>
             </div>
+            </div>
         </div>
-    </div> 
+    </div>
 </div>
