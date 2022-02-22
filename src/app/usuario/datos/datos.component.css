@@ -1,0 +1,16 @@
+.container-fluid{
+    margin-bottom: 10rem;
+    height: 100vh;
+    align-items: center;
+}
+
+.containerCarta{
+    height: 60vh;
+    margin: auto;
+}
+.fotoPerfil{
+    width: 11rem;
+    height: 11rem;
+    border-radius:150px;
+    margin-top: 3rem;
+}
