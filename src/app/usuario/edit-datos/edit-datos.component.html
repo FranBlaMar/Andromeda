@@ -1,5 +1,5 @@
 <div class="contenedor">
-    <div class="card card-inverse" style="background-color: rgb(235, 72, 72); border-color: rgb(255, 255, 255);">
+    <div class="card card-inverse">
         <div class="card-block containerCarta">
             <div class="row datosUser">
 
@@ -8,11 +8,21 @@
                 </div>  
                 
                 <div class="col-md-8 col-sm-8" style="padding: 3rem;">
-                    <form>
-                    <h2 class="card-title">Nombre: <input type="text" /></h2>
-                    <p class="card-text"><strong>Descripción: <input type="text"/></strong>  </p>
-                    <p class="card-text"><strong>Email: <input type="text"/></strong>  </p>
-                    <button class="btn btn-dark btn-lg btn-block"> Realizar cambios </button>
+                    <form [formGroup]="formularioEditarDatos" id="formEdit" (submit)="editarUsuario()">
+                    <h2 class="card-title">Nombre: <input type="text" formControlName="name"/>
+                    <br>
+                    <p class="form-text text-danger" *ngIf="formularioEditarDatos.controls['name'].errors && formularioEditarDatos.controls['name'].touched">Nombre no válido </p>
+
+                    </h2>
+                    <p class="card-text"><strong>Descripción: </strong>  </p>
+                    <textarea cols="40" rows="5" form="formEdit" formControlName="aboutMe"> </textarea>
+                    <br><br><br>
+                    <p class="card-text"><strong>Email: <input type="text" size="30" formControlName="email" /></strong> 
+                    <br>                    
+                    <span class="form-text text-danger" *ngIf="formularioEditarDatos.controls['email'].errors && formularioEditarDatos.controls['email'].touched">Email no válido</span>
+                    </p>
+
+                    <button class="btn btn-dark btn-lg btn-block" > Realizar cambios </button>
                 </form>
                 </div>
             </div>

@@ -20,4 +20,12 @@ export class DatosUserService {
     return this.http.get<userCompleto>( url, { headers } ) 
   }
   
+  //Metodo para modificar datos de un usuario en la base de datos
+  modificarUsuario(user: userCompleto){
+    const url= `${ this.URLBase }/user`;
+    const headers = new HttpHeaders()
+    .set('Authorization', `Bearer ${localStorage.getItem('jwt')}`  || '' );
+    headers.set('Access-Control-Allow-Origin', 'http://localhost:8080');
+    return this.http.put<userCompleto>( url, user, { headers }  )
+  }
 }

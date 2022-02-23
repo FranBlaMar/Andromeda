@@ -1,23 +1,22 @@
 
 <div class="container" style="min-height: 63vh">
-<div class="input-group container">
-        <div class="form-outline">
-            <input type="search" id="form1" class="form-control" [(ngModel)]="busqueda" placeholder="Busqueda..."/>
-        </div>
-        <div>
-            <button type="button" class="btn btn-primary" (click)="obtenerInfo()">
-                <i class="bi bi-search"></i>
-            </button>
-        </div>
+<div class="input-group container align-items-center">
+    
+    <div class="form-outline d-flex m-auto ">
+        <input type="search" size="30" id="form1" class="" [(ngModel)]="busqueda" (keyup.enter)="obtenerInfo()"placeholder="Busqueda..."/>
+        <button type="button" class="btn" (click)="obtenerInfo()">
+            <i class="bi bi-search text-white"></i>
+        </button>
+    </div>
 </div>
 
 <div class="text-white" *ngIf="error" style="height: 60vh;">
-    <h1 class="text-center justify-content-center"> No se ha encontrado nada :(</h1>
+    <h1 class="text-center justify-content-center mt-5 p-5"> Opss... No se ha podido encontrado nada </h1>
 </div>
 
 <div class="container mt-5 d-flex flex-wrap" *ngFor="let info of listInfo">
-    <div class="imagen">
-        <img src={{info.image}} class="img-fluid" style="width: 25rem; height: 20rem;">
+    <div class="imagen m-auto">
+        <img src={{info.image}} class="img-fluid" style="height: 20rem;">
     </div>
     <div class="texto" style="max-width: 30rem; margin: auto">
         <p class="text-white text-uppercase titulo"> {{info.nameInfo}}</p>
