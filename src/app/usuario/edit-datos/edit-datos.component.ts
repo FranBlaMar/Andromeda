@@ -42,13 +42,14 @@ export class EditDatosComponent implements OnInit {
   
   }
 
+  //Metodo que para editar un usuario
   editarUsuario(){
-      this.servicio.modificarUsuario(this.formularioEditarDatos.value)
-      .subscribe(
-        next => {
-          this.router.navigateByUrl("user");
-        }
-      )
+    this.servicio.modificarUsuario(this.formularioEditarDatos.value)
+    .subscribe(
+      next => {
+        this.router.navigateByUrl("usuario");
+      }
+    )
   }
 
 }

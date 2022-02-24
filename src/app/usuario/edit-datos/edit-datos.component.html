@@ -9,21 +9,21 @@
                 
                 <div class="col-md-8 col-sm-8" style="padding: 3rem;">
                     <form [formGroup]="formularioEditarDatos" id="formEdit" (submit)="editarUsuario()">
-                    <h2 class="card-title">Nombre: <input type="text" formControlName="name"/>
-                    <br>
-                    <p class="form-text text-danger" *ngIf="formularioEditarDatos.controls['name'].errors && formularioEditarDatos.controls['name'].touched">Nombre no válido </p>
+                        <h2 class="card-title">Nombre: <input type="text" formControlName="name"/>
+                        <br>
+                        <p class="form-text text-danger" *ngIf="formularioEditarDatos.controls['name'].errors && formularioEditarDatos.controls['name'].touched">Nombre no válido </p>
 
-                    </h2>
-                    <p class="card-text"><strong>Descripción: </strong>  </p>
-                    <textarea cols="40" rows="5" form="formEdit" formControlName="aboutMe"> </textarea>
-                    <br><br><br>
-                    <p class="card-text"><strong>Email: <input type="text" size="30" formControlName="email" /></strong> 
-                    <br>                    
-                    <span class="form-text text-danger" *ngIf="formularioEditarDatos.controls['email'].errors && formularioEditarDatos.controls['email'].touched">Email no válido</span>
-                    </p>
+                        </h2>
+                        <p class="card-text"><strong>Descripción: </strong>  </p>
+                        <textarea cols="40" rows="5" form="formEdit" formControlName="aboutMe"> </textarea>
+                        <br><br><br>
+                        <p class="card-text"><strong>Email: <input type="text" size="30" formControlName="email" /></strong> 
+                        <br>                    
+                        <span class="form-text text-danger" *ngIf="formularioEditarDatos.controls['email'].errors && formularioEditarDatos.controls['email'].touched">Email no válido</span>
+                        </p>
 
-                    <button class="btn btn-dark btn-lg btn-block" > Realizar cambios </button>
-                </form>
+                        <button class="btn btn-dark btn-lg btn-block"[disabled]="formularioEditarDatos.invalid" > Realizar cambios </button>
+                    </form>
                 </div>
             </div>
         </div>
