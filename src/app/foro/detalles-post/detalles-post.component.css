@@ -1,0 +1,24 @@
+.card-body{
+    background-color: rgb(255,255,255,0.9);
+    margin: auto;
+    max-width: 80vw;
+    border-radius: 20px;
+    box-shadow: 0 14px 20px rgba(241, 214, 123, 0.4), 0 10px 10px rgba(241, 214, 123, 0.4);
+}
+
+.titulo{
+    text-transform: uppercase;
+    text-decoration:underline 3px;
+    font-style: normal;
+}
+.textoVolver{
+    color: rgb(255,255,255);
+    font-size: 1rem;
+    
+}
+.volver{
+    margin:auto;
+}
+.icono{
+    font-size: 2rem;
+}

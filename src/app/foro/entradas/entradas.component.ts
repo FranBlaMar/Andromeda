@@ -5,7 +5,7 @@ import { ForoService } from '../services/foro.service';
 @Component({
   selector: 'app-entradas',
   templateUrl: './entradas.component.html',
-  styles: [
+  styles: [ 
   ]
 })
 export class EntradasComponent implements OnInit, OnDestroy {

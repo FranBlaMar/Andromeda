@@ -30,9 +30,6 @@ const routes: Routes = [
   {
     path: 'usuario',
     loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule), canActivate: [Guardian]
-  },
-  {
-    path:"**", redirectTo:"main"
   }
 
 ];

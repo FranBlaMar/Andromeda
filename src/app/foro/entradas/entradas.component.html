@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container vh-100">
     <div class="card m-5 p-3">
         
         <div class="card-body">
@@ -12,14 +12,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let post of listaPosts" [routerLink]="['/', post.id]">
+                <tr *ngFor="let post of listaPosts" [routerLink]="[post.id]">
                     <td>{{ post.author.name }}</td>
                     <td>{{ post.title }}</td>
                     <td>{{ post.date }}</td>
                 </tr>
                 </tbody>
             </table>
+            <a [routerLink]="['/crearPost']"> Crear un post</a>
         </div>
-
+        
     </div>
 </div>

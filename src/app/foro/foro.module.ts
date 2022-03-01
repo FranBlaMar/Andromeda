@@ -6,6 +6,9 @@ import { ForoRoutingModule } from './foro-routing.module';
 import { DataTablesModule } from 'angular-datatables';
 import { RouterModule } from '@angular/router';
 import { DetallesPostComponent } from './detalles-post/detalles-post.component';
+import { MainComponent } from './main/main.component';
+import { SharedModule } from '../shared/shared.module';
+import { CrearPostComponent } from './crear-post/crear-post.component';
 
 
 
@@ -13,13 +16,16 @@ import { DetallesPostComponent } from './detalles-post/detalles-post.component';
   declarations: [
     EntradasComponent,
     ComentariosComponent,
-    DetallesPostComponent
+    DetallesPostComponent,
+    MainComponent,
+    CrearPostComponent
   ],
   imports: [
     CommonModule,
     ForoRoutingModule,
     DataTablesModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ]
 })
 export class ForoModule { }

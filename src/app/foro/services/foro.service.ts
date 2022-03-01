@@ -20,4 +20,12 @@ private URLBase: string = environment.URLBase;
     .set('Authorization', `Bearer ${localStorage.getItem('jwt')}`  || '' );
     return this.http.get<post[]>( url, { headers } )
   }
+
+  //Metodo para obtener un post mediante su id
+  getPostPorId( id: number){
+    const url = `${ this.URLBase }/post/${id}`;
+    const headers = new HttpHeaders()
+    .set('Authorization', `Bearer ${localStorage.getItem('jwt')}`  || '' );
+    return this.http.get<post>( url, { headers } )
+  }
 }

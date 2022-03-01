@@ -1,13 +1,8 @@
 
-
-
-  
-<div class="d-flex flex-wrap">
- <div class="card m-4 p-4" style="width: 18rem;" *ngFor="let noticia of listaNoticias">
-    <img class="card-img-top" src={{noticia.imagen}}>
-    <div class="card-body">
+<div class="d-flex flex-wrap contenedor">
+ <a class="card m-4"  *ngFor="let noticia of listaNoticias" style="width: 18rem; --bg-img: url({{noticia.imagen}})" href={{noticia.url}}>
+    <div class="card-body m-4">
       <h5 class="card-title">{{noticia.titular}}</h5>
-      <a href={{noticia.url}} class="btn btn-primary">Ir a la noticia</a>
     </div>
-</div>
+  </a>
 </div>
