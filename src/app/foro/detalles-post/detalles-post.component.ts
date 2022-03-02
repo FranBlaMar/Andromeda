@@ -15,14 +15,17 @@ export class DetallesPostComponent implements OnInit {
   constructor(private servicio: ForoService, private routeSnap: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
-    this.getPost();
+    this.getPost(); 
+    
   }
 
-  //Metodo para suscribirse a la peticion get de post por id
+  //Metodo para obtener un post por id
   getPost(){
     const id = this.routeSnap.snapshot.params['idPost'];
     this.servicio.getPostPorId(id)
-    .subscribe( resp => {this.post = resp, this.carga = true})
+    .subscribe( resp => {
+      this.post = resp, 
+      this.carga = true})
   }
 
   //Metodo para volver al foro
