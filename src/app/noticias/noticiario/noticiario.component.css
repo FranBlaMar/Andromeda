@@ -19,3 +19,6 @@
 .contenedor{
     justify-content: center;
 }
+.pagina{
+    min-height: 80vh;
+}

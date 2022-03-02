@@ -1,6 +1,8 @@
-<div class="volver">
-<span class="textoVolver">Volver al foro: <i class="icono bi bi-arrow-90deg-left"></i></span>
-</div>
+<div class=""></div>
+<br><br>
+<a class="volver" >
+    <i class="icono bi bi-arrow-90deg-left" (click)="volverAForo()"></i>
+</a>
 <div class="container">
     
     <div class="card-body p-5" *ngIf="carga">
@@ -9,5 +11,8 @@
         <hr>
         <p> {{post.body}}</p>
         <p class="small"> {{post.date}}</p>
+        <div>
+        <span>Editar: <i class="bi bi-pencil-square"></i></span>
+        </div>
     </div>
 </div>

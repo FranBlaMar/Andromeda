@@ -1,5 +1,5 @@
- <section class="vh-100">
-        <div class="container h-100">
+ <section class="pagina">
+        <div class="container">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-xl-10">
                     <div class="card" style="border-radius: 1%;">
@@ -15,7 +15,7 @@
                                             <input type="text" class="form-control form-control-lg" [(ngModel)]="user.userName" name="userName" #userName="ngModel" required/>
                                             <span class="form-text text-danger" *ngIf="userName.errors && userName.touched"> El nombre de usuario es obligatorio </span>
                                           </div>
-
+                                          <br><br>
                                         </div>
                                         <div class="form-outline mb-4 row">
                                           <label class="form-label col-sm-3" id="logni">Contraseña</label>
@@ -27,13 +27,13 @@
                                         <div class="pt-1 mb-4">
                                             <button class="btn btn-dark btn-lg btn-block" type="submit">Iniciar Sesión</button>
                                         </div>
-                                        <p class="mb-5 pb-lg-2">¿No tienes una cuenta?  <a [routerLink]="['register']"  style="color: #030303;"> Registrate</a></p>
+                                        <p class="mb-5 pb-lg-2">¿No tienes una cuenta?  <a [routerLink]="['register']"> Regístrate aquí</a></p>
 
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-5 d-flex text-center" style="background-color: #000">
-                                <img class="img-fluid" src="./assets/img/slide3.jpg">
+                            <div class="col-md-6 col-lg-5 d-flex text-center">
+                                <img class="img-fluid" src="./assets/img/login.jpg">
                             </div>
                         </div>
                     </div>

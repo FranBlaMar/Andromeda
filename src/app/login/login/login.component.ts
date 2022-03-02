@@ -7,11 +7,11 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [""
-  ]
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   
+  clase: boolean = false;
   user: userLogin = {
     userName: '',
     password: ''
@@ -44,6 +44,12 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  cambiarPanelIzquierda(){
+    this.clase = false;
+  }
+  cambiarPanelDerecha(){
+    this.clase = true;
+  }
 
 
 }

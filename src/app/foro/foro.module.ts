@@ -9,6 +9,8 @@ import { DetallesPostComponent } from './detalles-post/detalles-post.component';
 import { MainComponent } from './main/main.component';
 import { SharedModule } from '../shared/shared.module';
 import { CrearPostComponent } from './crear-post/crear-post.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditarPostComponent } from './editar-post/editar-post.component';
 
 
 
@@ -18,14 +20,16 @@ import { CrearPostComponent } from './crear-post/crear-post.component';
     ComentariosComponent,
     DetallesPostComponent,
     MainComponent,
-    CrearPostComponent
+    CrearPostComponent,
+    EditarPostComponent
   ],
   imports: [
     CommonModule,
     ForoRoutingModule,
     DataTablesModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class ForoModule { }

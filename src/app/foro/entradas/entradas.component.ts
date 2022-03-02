@@ -5,7 +5,7 @@ import { ForoService } from '../services/foro.service';
 @Component({
   selector: 'app-entradas',
   templateUrl: './entradas.component.html',
-  styles: [ 
+  styles: [ "tr{ cursor: pointer;} tr:hover{background-color: rgb(241, 214, 123, 0.3)} .container{ min-height: 80vh;}"
   ]
 })
 export class EntradasComponent implements OnInit, OnDestroy {

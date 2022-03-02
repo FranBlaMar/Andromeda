@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { post } from '../interfaces/foro.interface';
 import { ForoService } from '../services/foro.service';
+import { userCompleto } from 'src/app/login/interfaces/login.interface';
 
 @Component({
   selector: 'app-detalles-post',
@@ -11,7 +12,7 @@ import { ForoService } from '../services/foro.service';
 export class DetallesPostComponent implements OnInit {
   carga: boolean = false;
   post!: post;
-  constructor(private servicio: ForoService, private route: ActivatedRoute) { }
+  constructor(private servicio: ForoService, private routeSnap: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
     this.getPost();
@@ -19,8 +20,13 @@ export class DetallesPostComponent implements OnInit {
 
   //Metodo para suscribirse a la peticion get de post por id
   getPost(){
-    const id = this.route.snapshot.params['idPost'];
+    const id = this.routeSnap.snapshot.params['idPost'];
     this.servicio.getPostPorId(id)
     .subscribe( resp => {this.post = resp, this.carga = true})
+  }
+
+  //Metodo para volver al foro
+  volverAForo(){
+    this.route.navigateByUrl('/foro');
   }
 }

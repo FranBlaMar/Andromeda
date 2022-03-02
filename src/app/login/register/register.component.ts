@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styles: [
+  styles: [ ".pagina{min-height: 80vh; margin-top: 7rem;} button:hover {box-shadow: 0px 0px 15px rgb(0,0,0);} a{text-decoration: none}"
   ]
 })
 export class RegisterComponent implements OnInit {

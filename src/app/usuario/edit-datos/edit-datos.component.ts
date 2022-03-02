@@ -17,7 +17,7 @@ export class EditDatosComponent implements OnInit {
     userName: [],
     name: [,[Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
     aboutMe: [],
-    email: [,[Validators.required, Validators.pattern("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z]+)*$")]],
+    email: [,],
     numberOfComents:[],
     numberOfPosts: []
   });
