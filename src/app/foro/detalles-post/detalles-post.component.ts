@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { post } from '../interfaces/foro.interface';
 import { ForoService } from '../services/foro.service';
@@ -11,6 +11,7 @@ import { userCompleto } from 'src/app/login/interfaces/login.interface';
 })
 export class DetallesPostComponent implements OnInit {
   carga: boolean = false;
+
   post!: post;
   constructor(private servicio: ForoService, private routeSnap: ActivatedRoute, private route: Router) { }
 

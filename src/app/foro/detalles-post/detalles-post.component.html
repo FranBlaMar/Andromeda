@@ -3,16 +3,15 @@
 <a class="volver" >
     <i class="icono bi bi-arrow-90deg-left" (click)="volverAForo()"></i>
 </a>
-<div class="container">
+<div class="container" *ngIf="carga">
     
-    <div class="card-body p-5" *ngIf="carga">
+    <div class="card-body p-5" >
         <h2 class="text-center titulo"> {{post.title}} </h2>
-        <p> {{post.author.name}}</p>
+        <p>Autor de post: {{post.author.name}}</p>
         <hr>
         <p> {{post.body}}</p>
-        <p class="small"> {{post.date}}</p>
-        <div>
-        <span>Editar: <i class="bi bi-pencil-square"></i></span>
-        </div>
+        <hr>
+        <p class="small">Fecha de creación:  {{post.date}}</p>
     </div>
+   <app-comentarios [post] = 'post'></app-comentarios>
 </div>
