@@ -16,13 +16,13 @@ export class CrearPostComponent implements OnInit {
     title: [,[Validators.required]],
     body: [,[Validators.required]],
   });
+  
   ngOnInit(): void {
     this.servicio.obtenerUsuario();
   }
 
   //Metodo para crear un post
   crearPost(){
-    console.log(this.formularioPost.value)
     this.servicio.crearPost(this.formularioPost.value)
     .subscribe(resp => {this.route.navigateByUrl('foro')});
   }

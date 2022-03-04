@@ -4,6 +4,7 @@ a {
 	font-family: 'Contrail One';
 	font-weight: 900;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 a:after {
 	content: '';

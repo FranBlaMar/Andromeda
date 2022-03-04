@@ -1,6 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { post } from '../interfaces/foro.interface';
+import { comentario, post } from '../interfaces/foro.interface';
 import { ForoService } from '../services/foro.service';
 import { userCompleto } from 'src/app/login/interfaces/login.interface';
 
@@ -11,13 +11,15 @@ import { userCompleto } from 'src/app/login/interfaces/login.interface';
 })
 export class DetallesPostComponent implements OnInit {
   carga: boolean = false;
+  @Output() mostrarComentarios:EventEmitter<comentario[]> = new EventEmitter<comentario[]>(); 
+
+  comentarios: comentario [] = [];
 
   post!: post;
   constructor(private servicio: ForoService, private routeSnap: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
     this.getPost(); 
-    
   }
 
   //Metodo para obtener un post por id
@@ -26,6 +28,8 @@ export class DetallesPostComponent implements OnInit {
     this.servicio.getPostPorId(id)
     .subscribe( resp => {
       this.post = resp, 
+      this.comentarios = resp.comments,
+      this.mostrarComentarios.emit(this.comentarios),
       this.carga = true})
   }
 

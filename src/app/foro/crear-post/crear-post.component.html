@@ -1,21 +1,21 @@
 <div class="container">    
     <div class="card-body p-5">
         <div class="col-md-8 col-sm-8">
-                    <form [formGroup]="formularioPost" id="formEdit" (submit)="crearPost()">
-                        <h2 class="card-title">Título: <input type="text" formControlName="title"/>
-                        <br>
-                        <p class="form-text text-danger" *ngIf="formularioPost.controls['title'].errors && formularioPost.controls['title'].touched">El título es obligatorio </p>
+            <form [formGroup]="formularioPost" id="formEdit" (submit)="crearPost()">
+                <h2 class="card-title">Título: <input type="text" formControlName="title"/>
+                <br>
+                <p class="form-text text-danger" *ngIf="formularioPost.controls['title'].errors && formularioPost.controls['title'].touched">El título es obligatorio </p>
 
-                        </h2>
-                        <br>
-                        <p class="card-text"><strong>Cuerpo: </strong>  </p>
-                        <textarea class="col-12" rows="5" form="formEdit" formControlName="body"> </textarea>
-                        <p class="form-text text-danger" *ngIf="formularioPost.controls['body'].errors && formularioPost.controls['body'].touched">El cuerpo es obligatorio </p>
+                </h2>
+                <br>
+                <p class="card-text"><strong>Cuerpo: </strong>  </p>
+                <textarea class="col-12" rows="5" form="formEdit" formControlName="body"> </textarea>
+                <p class="form-text text-danger" *ngIf="formularioPost.controls['body'].errors && formularioPost.controls['body'].touched">El cuerpo es obligatorio </p>
 
-                        <br><br><br>
+                <br><br><br>
 
-                        <button class="btn btn-dark btn-lg btn-block"[disabled]="formularioPost.invalid" > Crear Post </button>
-                    </form>
-                </div>
+                <button class="btn btn-dark btn-lg btn-block"[disabled]="formularioPost.invalid" > Crear Post </button>
+            </form>
+        </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { userCompleto } from 'src/app/login/interfaces/login.interface';
 import { comentario, post } from '../interfaces/foro.interface';
 import { ForoService } from '../services/foro.service';
@@ -11,26 +12,34 @@ import { ForoService } from '../services/foro.service';
 })
 export class ComentariosComponent implements OnInit {
 
-  @Input() post!: post;
+  post!: post;
+
   comentarios: comentario [] = [];
   user!: userCompleto;
   mostrar: boolean = false;
 
-  constructor(private servicio: ForoService, private builder: FormBuilder){}
+  constructor(private servicio: ForoService, private builder: FormBuilder, private routeSnap: ActivatedRoute){}
 
   formularioComentario: FormGroup = this.builder.group({
     comment: [,[Validators.required]],
   });
 
   ngOnInit(): void {
-    this.obtenerComentarios(this.post);
     this.user = this.servicio.obtenerUsuario();
+    this.getPost();
   }
 
-  //Método para obtener comentarios de un post
-  obtenerComentarios(post: post){
-    this.servicio.obtenerComentarios(post)
-    .subscribe( resp => this.comentarios = resp)
+  //Metodo para obtener un post por id
+  getPost(){
+    const id = this.routeSnap.snapshot.params['idPost'];
+    this.servicio.getPostPorId(id)
+    .subscribe( resp => {
+      this.post = resp})
+  }
+  
+  //Método para mostrar comentarios de un post
+  getComentarios(comentariosEvent: comentario[]){
+    this.comentarios = comentariosEvent;
   }
 
   //Metodo para crear un comentario

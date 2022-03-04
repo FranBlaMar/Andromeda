@@ -21,12 +21,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Metodo para hacer login
   login(){
     this.servicio.login(this.user)
     .subscribe({
       next: (resp) => {
         localStorage.setItem("jwt",resp.jwt_token);
-        this.route.navigateByUrl("/usuario"); 
+        window.location.href = "/usuario"; 
       },
       error: (err) => {
         Swal.fire({
@@ -42,13 +43,6 @@ export class LoginComponent implements OnInit {
         })
       }
     })
-  }
-
-  cambiarPanelIzquierda(){
-    this.clase = false;
-  }
-  cambiarPanelDerecha(){
-    this.clase = true;
   }
 
 

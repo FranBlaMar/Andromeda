@@ -1,9 +1,8 @@
-<div class=""></div>
 <br><br>
 <a class="volver" >
     <i class="icono bi bi-arrow-90deg-left" (click)="volverAForo()"></i>
 </a>
-<div class="container" *ngIf="carga">
+<div *ngIf="carga">
     
     <div class="card-body p-5" >
         <h2 class="text-center titulo"> {{post.title}} </h2>
@@ -13,5 +12,4 @@
         <hr>
         <p class="small">Fecha de creación:  {{post.date}}</p>
     </div>
-   <app-comentarios [post] = 'post'></app-comentarios>
 </div>

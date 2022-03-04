@@ -55,8 +55,6 @@ private URLBase: string = environment.URLBase;
   crearComentarios(post:post, comentario: comentario){
     const url = `${ this.URLBase }/post/${post.id}/comentario`;
     comentario.author = this.obtenerUsuario();
-    console.log(comentario.author);
-    console.log(this.obtenerUsuario());
     //Mando la petición al back
     return this.http.post<comentario>(url, comentario, { headers: this.headers })
   }
