@@ -11,9 +11,18 @@ i{
     cursor: pointer;
     font-size: 18px;
 }
+
 .container{
     min-height: 80vh;
 }
+
 .textoIcono{
     float: right;
+}
+
+.bi-trash{
+    font-size: 23px;
+}
+.bi-trash:hover{
+    color: rgb(255, 0, 0);
 }

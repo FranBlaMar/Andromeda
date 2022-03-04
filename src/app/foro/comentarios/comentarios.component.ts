@@ -13,10 +13,11 @@ import { ForoService } from '../services/foro.service';
 export class ComentariosComponent implements OnInit {
 
   post!: post;
-
+  esAutor: boolean = false;
   comentarios: comentario [] = [];
   user!: userCompleto;
   mostrar: boolean = false;
+  carga: boolean = false;
 
   constructor(private servicio: ForoService, private builder: FormBuilder, private routeSnap: ActivatedRoute){}
 
@@ -39,7 +40,20 @@ export class ComentariosComponent implements OnInit {
   
   //Método para mostrar comentarios de un post
   getComentarios(comentariosEvent: comentario[]){
+    let user = localStorage.getItem("userName");
     this.comentarios = comentariosEvent;
+    for (let comentario of this.comentarios){
+      if (comentario.author.userName == user){
+        comentario.esAutor = true;
+      }
+    }
+    this.carga = true;
+  }
+
+  //Metodo para borrar comentario
+  borrarComentario(comentario: comentario){
+    this.servicio.borrarComentarios(this.post, comentario)
+    .subscribe(next => {window.location.reload()});
   }
 
   //Metodo para crear un comentario

@@ -43,6 +43,7 @@ export class NavbarComponent implements OnInit {
   //Metodo para cerrar sesion 
   cerrarSesion(){
     localStorage.removeItem("jwt");
+    localStorage.removeItem("userName")
     window.location.href = '/main';
   }
 }

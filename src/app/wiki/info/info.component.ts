@@ -31,6 +31,7 @@ export class InfoComponent implements OnInit {
       );
   }
 
+  //Metodo para obtener la info de un apartado de la wiki
   obtenerInfo(){
     this.listInfo.shift();
     this.error = false;

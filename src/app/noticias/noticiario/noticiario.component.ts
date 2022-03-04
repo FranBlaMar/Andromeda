@@ -16,6 +16,7 @@ export class NoticiarioComponent implements OnInit {
     this.obtenerNoticias();
   }
 
+  //Metodo para obtener las noticias de la base de datos
   obtenerNoticias(){
     this.servicio.enviarPeticion()
     .subscribe(resp=>{

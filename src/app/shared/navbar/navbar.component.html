@@ -16,9 +16,6 @@
                     <a class="h5 nav-link font-weight-bold" [routerLink]="['/main']" routerLinkActive="active" >Inicio</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/auth']" routerLinkActive="active">Login</a>
-                </li>
-                <li class="nav-item p-2">
                     <a class="h5 nav-link font-weight-bold" [routerLink]="['/foro']" routerLinkActive="active" >Foro</a>
                 </li>
                 <li class="nav-item dropdown p-2">
@@ -39,6 +36,9 @@
                 </li>
                 <li class="nav-item p-2" *ngIf="logeado">
                     <a class="h5 nav-link font-weight-bold" [routerLink]="['/usuario']" routerLinkActive="active">Perfil</a>
+                </li>
+                <li class="nav-item p-2" *ngIf="!logeado">
+                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/auth']" routerLinkActive="active">Login</a>
                 </li>
                 <li class="nav-item p-2" *ngIf="logeado">
                     <a class="h5 nav-link font-weight-bold" (click)="cerrarSesion()">Cerrar Sesión</a>

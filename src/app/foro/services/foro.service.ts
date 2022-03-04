@@ -59,4 +59,12 @@ private URLBase: string = environment.URLBase;
     return this.http.post<comentario>(url, comentario, { headers: this.headers })
   }
 
+  //Metodo para borrar un comentario
+  borrarComentarios(post:post, comentario: comentario){
+    const url = `${ this.URLBase }/post/${post.id}/comentario/${comentario.idComment}`;
+    comentario.author = this.obtenerUsuario();
+    //Mando la petición al back
+    return this.http.delete<comentario>(url, { headers: this.headers })
+  }
+
 }

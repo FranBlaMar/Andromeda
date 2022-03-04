@@ -16,3 +16,14 @@ h3{
 .card{
     background-image: url("src/assets/img/fondoContacto.jpg")
 }
+
+a {
+    color: rgb(255,255,255);
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+a:hover{
+    color:rgb(241, 214, 123);
+}

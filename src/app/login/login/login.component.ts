@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     .subscribe({
       next: (resp) => {
         localStorage.setItem("jwt",resp.jwt_token);
+        localStorage.setItem("userName",this.user.userName);
         window.location.href = "/usuario"; 
       },
       error: (err) => {

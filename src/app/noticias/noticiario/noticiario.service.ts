@@ -12,6 +12,7 @@ export class NoticiarioService {
   url: string = environment.URLBase + "/noticia";
   constructor(private http: HttpClient) { }
 
+  //Metodo para enviar la peticion get de las noticias de la base de datos
   enviarPeticion(){
     return this.http.get<noticia[]>(this.url);
   }

@@ -10,6 +10,8 @@ export interface post {
 }
 
 export interface comentario{
+    idComment: number,
     comment: String,
-    author: userCompleto
+    author: userCompleto,
+    esAutor: boolean
 }

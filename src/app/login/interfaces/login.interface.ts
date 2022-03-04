@@ -11,3 +11,6 @@ export interface userCompleto{
     numberOfPosts: number,
     numberOfComents: number
 }
+export interface user{
+    userName: string
+}

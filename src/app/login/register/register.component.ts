@@ -23,12 +23,13 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  //Metodo para registrar un usuario
   register(){
     this.servicio.register(this.formularioRegistro.value)
     .subscribe({
       next: (resp) => {
         localStorage.setItem("jwt",resp.jwt_token);
+        localStorage.setItem("userName",this.formularioRegistro.value.userName);
         window.location.href = "/usuario"; 
       },
       error: (err) => {
