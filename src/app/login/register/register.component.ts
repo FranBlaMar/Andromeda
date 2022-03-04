@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     .subscribe({
       next: (resp) => {
         localStorage.setItem("jwt",resp.jwt_token);
-        this.route.navigateByUrl("/usuario"); 
+        window.location.href = "/usuario"; 
       },
       error: (err) => {
         Swal.fire({
