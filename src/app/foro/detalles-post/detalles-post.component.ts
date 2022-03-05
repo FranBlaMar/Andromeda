@@ -2,7 +2,6 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { comentario, post } from '../interfaces/foro.interface';
 import { ForoService } from '../services/foro.service';
-import { userCompleto } from 'src/app/login/interfaces/login.interface';
 
 @Component({
   selector: 'app-detalles-post',

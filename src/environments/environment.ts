@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URLBase: 'http://localhost:8080'
+  URLBase: 'https://andromeda-fran.herokuapp.com'
 };
 
 
