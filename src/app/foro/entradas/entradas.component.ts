@@ -11,11 +11,17 @@ import { ForoService } from '../services/foro.service';
 export class EntradasComponent implements OnInit, OnDestroy {
 
   listaPosts: post[] = [];
-  dtOptions: DataTables.Settings = {responsive: true, language: {url: 'http://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json'}};
+  dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
   constructor(private servicio: ForoService) { }
 
   ngOnInit(): void {
+    this.dtOptions= {
+      responsive: true,
+       language: {
+         url: 'http://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json'
+        }
+    }
     this.obtenerPosts();
   }
 
@@ -24,7 +30,7 @@ export class EntradasComponent implements OnInit, OnDestroy {
     this.servicio.getPosts()
     .subscribe(resp => {
       this.listaPosts = resp;
-      this.dtTrigger.next(this.listaPosts);
+      this.dtTrigger.next(null);
     }
     )
   }
