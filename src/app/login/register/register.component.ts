@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
       next: (resp) => {
         localStorage.setItem("jwt",resp.jwt_token);
         localStorage.setItem("userName",this.formularioRegistro.value.userName);
-        window.location.href = "/usuario"; 
+        window.location.href = "usuario"; 
       },
       error: (err) => {
         Swal.fire({

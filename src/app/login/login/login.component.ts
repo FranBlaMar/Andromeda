@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       next: (resp) => {
         localStorage.setItem("jwt",resp.jwt_token);
         localStorage.setItem("userName",this.user.userName);
-        window.location.href = "/usuario"; 
+        window.location.href = "usuario"; 
       },
       error: (err) => {
         Swal.fire({

@@ -44,6 +44,6 @@ export class NavbarComponent implements OnInit {
   cerrarSesion(){
     localStorage.removeItem("jwt");
     localStorage.removeItem("userName")
-    window.location.href = '/main';
+    window.location.href = 'main';
   }
 }

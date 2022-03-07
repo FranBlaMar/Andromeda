@@ -11,7 +11,7 @@ import { ForoService } from '../services/foro.service';
 export class EntradasComponent implements OnInit, OnDestroy {
 
   listaPosts: post[] = [];
-  dtOptions: DataTables.Settings = {};
+  dtOptions: DataTables.Settings = {responsive: true, language: {url: 'http://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json'}};
   dtTrigger: Subject<any> = new Subject<any>();
   constructor(private servicio: ForoService) { }
 
