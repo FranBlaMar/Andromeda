@@ -16,7 +16,7 @@ export class InfoComponent implements OnInit {
   listInfo: Informacion[] = [];
   paramsSubscription!: Subscription ;
   error: boolean = false; 
-
+  carga: boolean = true;
 
   constructor(private route:ActivatedRoute, private servicio: InfoService) { }
 
@@ -27,6 +27,7 @@ export class InfoComponent implements OnInit {
           this.apartado = updatedParams['nombreApartado'];
           this.busqueda = updatedParams['nombreApartado']
           this.obtenerInfo();
+          
         }
       );
   }
@@ -37,7 +38,7 @@ export class InfoComponent implements OnInit {
     this.error = false;
     this.servicio.enviarPeticion(this.apartado, this.busqueda)
     .subscribe({
-      next: resp => this.listInfo.push(resp),
+      next: resp => {this.listInfo.push(resp), this.carga = false;},
       error: error => this.error = true
       });
   }

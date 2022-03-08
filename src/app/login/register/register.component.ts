@@ -28,8 +28,7 @@ export class RegisterComponent implements OnInit {
     this.servicio.register(this.formularioRegistro.value)
     .subscribe({
       next: (resp) => {
-        localStorage.setItem("jwt",resp.jwt_token);
-        localStorage.setItem("userName",this.formularioRegistro.value.userName);
+        localStorage.setItem("jwt",resp.jwt_token), localStorage.setItem("userName",this.formularioRegistro.value.userName);
         window.location.href = "usuario"; 
       },
       error: (err) => {
@@ -44,8 +43,8 @@ export class RegisterComponent implements OnInit {
             rgba(0,0,123,0.4)
           `
         })
+        this.formularioRegistro.reset();
       }
     })
-    this.formularioRegistro.reset();
   }
 }

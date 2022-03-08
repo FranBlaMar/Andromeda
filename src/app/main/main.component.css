@@ -1,0 +1,22 @@
+.container{
+    min-height: 100vh;
+   
+}
+.bannerPortada{
+    transition: ease-in;
+}
+.tituloMain{
+    color:rgb(255,255,255);
+    margin: auto;
+}
+.bannerPortada{
+    height: 30rem;
+    width: 100vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .bannerPortada{
+        height: 10rem;
+        width: 100vw;
+    }
+  }

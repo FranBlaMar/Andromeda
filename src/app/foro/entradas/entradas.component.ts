@@ -18,8 +18,9 @@ export class EntradasComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.dtOptions= {
       responsive: true,
+      processing: true,
        language: {
-         url: 'http://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json'
+         url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
         }
     }
     this.obtenerPosts();

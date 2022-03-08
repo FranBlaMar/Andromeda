@@ -11,7 +11,7 @@ export class NoticiarioComponent implements OnInit {
 
   listaNoticias: noticia[] = [];
   constructor(private servicio: NoticiarioService) { }
-
+  carga: boolean = true;
   ngOnInit(): void {
     this.obtenerNoticias();
   }
@@ -20,7 +20,9 @@ export class NoticiarioComponent implements OnInit {
   obtenerNoticias(){
     this.servicio.enviarPeticion()
     .subscribe(resp=>{
+      setTimeout(()=>{this.carga = true, 4000}),
       this.listaNoticias= resp;
+      this.carga = false;
     })
   }
 }
