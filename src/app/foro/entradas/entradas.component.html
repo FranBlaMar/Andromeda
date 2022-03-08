@@ -13,7 +13,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let post of listaPosts" [routerLink]="[post.id]">
-                    <td>{{ post.author.name }}</td>
+                    <td>{{ post.author.userName }}</td>
                     <td>{{ post.title }}</td>
                     <td>{{ post.date }}</td>
                 </tr>
