@@ -15,8 +15,7 @@ export class InfoComponent implements OnInit {
   busqueda: string = this.apartado;
   listInfo: Informacion[] = [];
   paramsSubscription!: Subscription ;
-  error: boolean = false; 
-  carga: boolean = true;
+  error: boolean = false;
 
   constructor(private route:ActivatedRoute, private servicio: InfoService) { }
 
@@ -38,7 +37,7 @@ export class InfoComponent implements OnInit {
     this.error = false;
     this.servicio.enviarPeticion(this.apartado, this.busqueda)
     .subscribe({
-      next: resp => {this.listInfo.push(resp), this.carga = false;},
+      next: resp => {this.listInfo.push(resp)},
       error: error => this.error = true
       });
   }

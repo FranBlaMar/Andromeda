@@ -1,8 +1,4 @@
-<div class="carga text-center pagina" *ngIf="carga">
-  <img class="gifCarga img-fluid" src="./assets/img/carga.gif" style="filter:contrast(200%)">
-</div>
-
-<div class="pagina" *ngIf="!carga">
+<div class="pagina">
   <div class="d-flex flex-wrap contenedor">
   <a class="card m-4"  *ngFor="let noticia of listaNoticias" style="width: 18rem; --bg-img: url({{noticia.imagen}})" href={{noticia.url}}>
       <div class="card-body m-4">

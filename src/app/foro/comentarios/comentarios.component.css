@@ -11,7 +11,13 @@ i{
     cursor: pointer;
     font-size: 18px;
 }
+.pagina{
+    min-height: 80vh;
+}
 
+.gifCarga{
+    margin-top: 15rem;
+}
 .container{
     min-height: 80vh;
 }
