@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { userCompleto } from 'src/app/login/interfaces/login.interface';
 import { comentario, post } from '../interfaces/foro.interface';
 import { ForoService } from '../services/foro.service';
@@ -19,7 +19,7 @@ export class ComentariosComponent implements OnInit {
   mostrar: boolean = false;
   carga: boolean = false;
 
-  constructor(private servicio: ForoService, private builder: FormBuilder, private routeSnap: ActivatedRoute){}
+  constructor(private servicio: ForoService, private route: Router, private builder: FormBuilder, private routeSnap: ActivatedRoute){}
 
   formularioComentario: FormGroup = this.builder.group({
     comment: [,[Validators.required]],
@@ -53,7 +53,7 @@ export class ComentariosComponent implements OnInit {
   //Metodo para borrar comentario
   borrarComentario(comentario: comentario){
     this.servicio.borrarComentarios(this.post, comentario)
-    .subscribe(next => {window.location.reload()});
+    .subscribe(next => {this.route.navigateByUrl("foro")});
   }
 
   //Metodo para crear un comentario
@@ -62,7 +62,7 @@ export class ComentariosComponent implements OnInit {
     let comentario: comentario = this.formularioComentario.value;
     comentario.author = this.user;
     this.servicio.crearComentarios(postDelComentario, comentario)
-    .subscribe(resp => window.location.reload())
+    .subscribe(resp => this.route.navigateByUrl("foro"))
   }
 
   //Metodo para mostrar el formulario de comentario
