@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { apartado } from 'src/app/wiki/interfaces/wiki.interface';
 import { ApartadoService } from './apartado.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,16 @@ export class NavbarComponent implements OnInit {
   listaApartados: apartado[] = [];
   constructor(private servicio: ApartadoService, private router: Router) { }
   logeado: boolean = false;
+  paramsSubscription!: Subscription;
+
   ngOnInit(): void {
+    this.paramsSubscription = this.router.events
+      .subscribe(
+        res => {
+          this.comprobarlogeado();
+        }
+    );
+
     this.obtenerApartados();
     this.comprobarlogeado();
   }
@@ -27,11 +37,12 @@ export class NavbarComponent implements OnInit {
 
   //Metodo para viajar a la wiki
   viajar(apartadoNombre: string){
-    window.location.href = "/info/" + apartadoNombre;
+    this.router.navigateByUrl("/info/" + apartadoNombre)
   }
 
   //Metodo para comprobar si el usuario esta logueado, para mostrar el enlace de cerrar sesión o no
   comprobarlogeado(){
+    console.log("h")
     if(localStorage.getItem("jwt")){
       this.logeado = true;
     }
@@ -44,6 +55,6 @@ export class NavbarComponent implements OnInit {
   cerrarSesion(){
     localStorage.removeItem("jwt");
     localStorage.removeItem("userName")
-    window.location.href = 'main';
+    this.router.navigateByUrl('main');
   }
 }
