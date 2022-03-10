@@ -52,17 +52,21 @@ export class ComentariosComponent implements OnInit {
 
   //Metodo para borrar comentario
   borrarComentario(comentario: comentario){
+    const id = this.routeSnap.snapshot.params['idPost'];
+    const idComentario = comentario.idComment;
+    let index = this.comentarios.findIndex(c => c.idComment == idComentario);
     this.servicio.borrarComentarios(this.post, comentario)
-    .subscribe(next => {this.route.navigateByUrl("foro")});
+    .subscribe(resp => this.comentarios.splice(index,1))
   }
 
   //Metodo para crear un comentario
   crearComentario(){
+    const id = this.routeSnap.snapshot.params['idPost'];
     let postDelComentario: post= this.post;
     let comentario: comentario = this.formularioComentario.value;
     comentario.author = this.user;
     this.servicio.crearComentarios(postDelComentario, comentario)
-    .subscribe(resp => this.route.navigateByUrl("foro"))
+    .subscribe(resp => { let user = localStorage.getItem("userName");this.comentarios.push(comentario), comentario.author.userName == user? comentario.esAutor = true : null;})
   }
 
   //Metodo para mostrar el formulario de comentario
