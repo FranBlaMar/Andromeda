@@ -13,10 +13,10 @@
         <div class="collapse navbar-collapse  align-items-center p-4" id="navbar">
             <ul class="navbar-nav m-auto">
                 <li class="nav-item p-2">
-                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/main']" routerLinkActive="active" >Inicio</a>
+                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/main']" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target="#navbar">Inicio</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/foro']" routerLinkActive="active" >Foro</a>
+                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/foro']" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target="#navbar">Foro</a>
                 </li>
                 <li class="nav-item dropdown p-2">
                     <a class="nav-link h5 font-weight-bold" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -24,21 +24,21 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" >
                         <li class="nav-item" *ngFor="let apartado of listaApartados">
-                            <a class="dropdown-item" [routerLink]="['/info/',apartado.name]" routerLinkActive="active"> {{apartado.name}}</a>
+                            <a class="dropdown-item" [routerLink]="['/info/',apartado.name]" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target="#navbar"> {{apartado.name}}</a>
                         </li>
                     </ul>
                   </li>
                 <li class="nav-item p-2">
-                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/contacto']" routerLinkActive="active" >Contacto</a>
+                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/contacto']" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target="#navbar">Contacto</a>
                 </li>
                 <li class="nav-item p-2">
-                <a class="h5 nav-link font-weight-bold" [routerLink]="['/noticias']" routerLinkActive="active">Noticias</a>
+                <a class="h5 nav-link font-weight-bold" [routerLink]="['/noticias']" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target="#navbar">Noticias</a>
                 </li>
                 <li class="nav-item p-2" *ngIf="logeado">
-                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/usuario']" routerLinkActive="active">Perfil</a>
+                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/usuario']" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target="#navbar">Perfil</a>
                 </li>
                 <li class="nav-item p-2" *ngIf="!logeado">
-                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/auth']" routerLinkActive="active">Login</a>
+                    <a class="h5 nav-link font-weight-bold" [routerLink]="['/auth']" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target="#navbar">Login</a>
                 </li>
                 <li class="nav-item p-2" *ngIf="logeado">
                     <a class="h5 nav-link font-weight-bold" (click)="cerrarSesion()">Cerrar Sesión</a>

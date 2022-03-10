@@ -11,22 +11,31 @@
                                     <div class="form-outline mb-4 row">
                                       <label class="form-label col-sm-3" id="login">Usuario</label>
                                       <div class="col-sm-9">
-                                        <input type="text" class="form-control form-control-lg" formControlName="userName"/>
-                                        <span class="form-text text-danger" *ngIf="formularioRegistro.controls['userName'].errors && formularioRegistro.controls['userName'].touched"> El nombre de usuario no puede estar vacío o tener una longitud inferior a 3 caracteres</span>
-
+                                        <input type="text" class="form-control form-control-lg" placeholder = "Introduzca su nombre de usuario"  formControlName="userName"/>
+                                        <span class="form-text text-danger" *ngIf="formularioRegistro.controls['userName'].errors && formularioRegistro.controls['userName'].touched && !validarUserName()"> El nombre de usuario no puede estar vacío o tener una longitud inferior a 3 caracteres</span>
+                                        <span class="form-text text-danger" *ngIf="validarUserName()"> Nombre de usuario ya existente</span>
+                                        
                                       </div>
                                     </div>
                                     <div class="form-outline mb-4 row">
                                       <label class="form-label col-sm-3" id="logni">Contraseña</label>
-                                      <div class="col-sm-9">
-                                        <input type="password" class="form-control form-control-lg" formControlName="password"/>
-                                        <span class="form-text text-danger" *ngIf="formularioRegistro.controls['password'].errors && formularioRegistro.controls['password'].touched">Requisitos:<br>- Mínimo 8 caracteres<br>- Mínimo un número<br>- Uso de letras mayúsculas y minúsculas </span>
+                                    
+                                        <div class="col-sm-9">
+                                            <input type="password" class="form-control form-control-lg" placeholder = "Introduzca su contraseña"  formControlName="password"/>
+                                            <span class="form-text text-danger" *ngIf="formularioRegistro.controls['password'].errors && formularioRegistro.controls['password'].touched">Requisitos:<br>- Mínimo 8 caracteres<br>- Mínimo un número<br>- Uso de letras mayúsculas y minúsculas </span>
+                                        </div>
                                     </div>
+                                    <div class="form-outline mb-4 row">
+                                        <label class="form-label col-sm-3" id="logni">Repita la Contraseña</label>
+                                        <div class="col-sm-9">
+                                          <input type="password" class="form-control form-control-lg" placeholder = "Introduzca de nuevo la contraseña"  formControlName="repetirPassword"/>
+                                          <span class="form-text text-danger" *ngIf="formularioRegistro.controls['repetirPassword'].errors && formularioRegistro.controls['repetirPassword'].touched">Las contraseñas no coinciden </span>
+                                      </div>
                                     </div>
                                     <div class="form-outline mb-4 row">
                                         <label class="form-label col-sm-3" id="logni">Nombre</label>
                                         <div class="col-sm-9">
-                                          <input type="text" class="form-control form-control-lg" formControlName="name"/>
+                                          <input type="text" class="form-control form-control-lg" formControlName="name" placeholder = "Introduzca su nombre" />
                                           <span class="form-text text-danger" *ngIf="formularioRegistro.controls['name'].errors && formularioRegistro.controls['name'].touched">Nombre no válido </span>
 
                                         </div>
@@ -34,7 +43,7 @@
                                     <div class="form-outline mb-4 row">
                                         <label class="form-label col-sm-3" id="logni">Email</label>
                                         <div class="col-sm-9">
-                                          <input type="text" class="form-control form-control-lg" formControlName="email"/>
+                                          <input type="text" class="form-control form-control-lg" formControlName="email" placeholder = "Introduzca su email" />
                                           <span class="form-text text-danger" *ngIf="formularioRegistro.controls['email'].errors && formularioRegistro.controls['email'].touched">Email no válido</span>
 
                                         </div>

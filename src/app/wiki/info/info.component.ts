@@ -26,7 +26,6 @@ export class InfoComponent implements OnInit {
           this.apartado = updatedParams['nombreApartado'];
           this.busqueda = updatedParams['nombreApartado']
           this.obtenerInfo();
-          
         }
       );
   }

@@ -10,7 +10,6 @@ import { MainComponent } from './main/main.component';
 import { SharedModule } from '../shared/shared.module';
 import { CrearPostComponent } from './crear-post/crear-post.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { EditarPostComponent } from './editar-post/editar-post.component';
 
 
 
@@ -20,8 +19,7 @@ import { EditarPostComponent } from './editar-post/editar-post.component';
     ComentariosComponent,
     DetallesPostComponent,
     MainComponent,
-    CrearPostComponent,
-    EditarPostComponent
+    CrearPostComponent
   ],
   imports: [
     CommonModule,

@@ -23,6 +23,7 @@
     "datatables.net-bs5": "^1.11.3",
     "datatables.net-dt": "^1.11.4",
     "jquery": "^3.6.0",
+    "ngx-pinch-zoom": "^2.6.2",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.4.0",
     "tslib": "^2.3.0",

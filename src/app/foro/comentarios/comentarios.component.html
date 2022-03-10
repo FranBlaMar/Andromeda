@@ -5,7 +5,7 @@
         <form [formGroup]="formularioComentario" id="formularioComentario" (submit)="crearComentario()">
             <h5>Escriba aquí su comentario: <i class="bi bi-eye" *ngIf="!mostrar" (click)="mostrarForm()">Mostrar </i> <span><i class="bi bi-eye-slash" *ngIf="mostrar" (click)="ocultarForm()"><p class="textoIcono">Ocultar</p> </i></span></h5> 
             <span *ngIf="mostrar">
-            <textarea class="col-8" rows="5" form="formularioComentario" formControlName="comment"> </textarea>
+            <textarea class="col-8" rows="5" form="formularioComentario" formControlName="comment" placeholder="Introduzca aquí su comentario"> </textarea>
             <p class="form-text text-danger" *ngIf="formularioComentario.controls['comment'].errors && formularioComentario.controls['comment'].touched">Campo obligatorio </p>
             <br><br>
             <button class="btn btn-dark btn-lg btn-block" [disabled]="formularioComentario.invalid"> Crear Comentario </button>
@@ -20,7 +20,7 @@
         <p class="small">Comentario de: {{comentario.author.userName}}</p>
         <hr>
         <p class="p-3"> {{comentario.comment}}</p>    
-        <i class="bi bi-trash" *ngIf=comentario.esAutor (click)="borrarComentario(comentario)"></i>
+        <i class="bi bi-trash" *ngIf=comentario.esAutor (click)="borrarComentario(comentario)" ></i>
         <br>   
     </div>
 </div>

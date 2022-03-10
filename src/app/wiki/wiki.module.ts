@@ -5,8 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { InfoComponent } from './info/info.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
-
-
+import { PinchZoomModule } from 'ngx-pinch-zoom';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,8 @@ import { RouterModule } from '@angular/router';
     WikiRoutingModule,
     FormsModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    PinchZoomModule
   ]
 })
 export class WikiModule { }

@@ -12,7 +12,7 @@
                                         <div class="form-outline mb-4 row">
                                           <label class="form-label col-sm-3" id="login">Usuario</label>
                                           <div class="col-sm-9">
-                                            <input type="text" class="form-control form-control-lg" [(ngModel)]="user.userName" name="userName" #userName="ngModel" required/>
+                                            <input type="text" class="form-control form-control-lg" [(ngModel)]="user.userName" placeholder = "Introduzca su nombre de ususario" name="userName" #userName="ngModel" required/>
                                             <span class="form-text text-danger" *ngIf="userName.errors && userName.touched"> El nombre de usuario es obligatorio </span>
                                           </div>
                                           <br><br>
@@ -20,7 +20,7 @@
                                         <div class="form-outline mb-4 row">
                                           <label class="form-label col-sm-3" id="logni">Contraseña</label>
                                           <div class="col-sm-9">
-                                            <input type="password" class="form-control form-control-lg" [(ngModel)]="user.password" name="password"  #password="ngModel" required/>
+                                            <input type="password" class="form-control form-control-lg" [(ngModel)]="user.password" placeholder = "Introduzca su contraseña"  name="password"  #password="ngModel" required/>
                                             <span class="form-text text-danger" *ngIf="password.errors && password.touched"> La contraseña es obligatoria </span>
                                         </div>
                                         </div>

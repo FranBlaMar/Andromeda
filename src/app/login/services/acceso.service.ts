@@ -13,18 +13,18 @@ export class AccesoService {
   private URLBase: string = environment.URLBase;
   constructor( private http: HttpClient) { }
 
-  //Metodo para hacer login
+  //Método para hacer login
   login(user: userLogin){
     const url = `${this.URLBase}/auth/login`;
     return this.http.post<RespuestaAuth>(url, user);
   }
-  //Metodo para registrar
+  //Método para registrar
   register(user: userCompleto){
     const url = `${this.URLBase}/auth/register`;
     return this.http.post<RespuestaAuth>(url, user);
   }
 
-  //Metodo para comprobar si un token es valido
+  //Método para comprobar si un token es valido
   comprobarToken():Observable<userCompleto>{
     const url = `${ this.URLBase }/user`;
     const headers = new HttpHeaders()
@@ -32,4 +32,9 @@ export class AccesoService {
     return this.http.get<userCompleto>( url, { headers } ) 
   }
   
+  //Método para obtener un usuario por su userName para comprobar si está en uso
+  comprobarNombreUsuario(userName: string):Observable<userCompleto>{
+    const url = `${ this.URLBase }/auth/${userName}`;
+    return this.http.get<userCompleto>(url)
+  }
 }

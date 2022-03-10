@@ -15,7 +15,9 @@
 
     <div class="container mt-5 d-flex flex-wrap" *ngFor="let info of listInfo">
         <div class="imagen m-auto">
-            <img src={{info.image}} class="img-fluid" style="height: 20rem;">
+            <pinch-zoom [double-tap-scale]="5" [doubleTap]="true">
+            <img src={{info.image}} class="img-fluid" alt="imagen de {{info.nameInfo}}" style="height: 20rem;">
+            </pinch-zoom>
         </div>
         <div class="texto" style="max-width: 30rem; margin: auto">
             <p class="text-white text-uppercase titulo"> {{info.nameInfo}}</p>
